@@ -1,0 +1,17 @@
+C:\ANA\ANA\bin\x86\Debug\ANA.exe.config
+C:\ANA\ANA\bin\x86\Debug\ANA.exe
+C:\ANA\ANA\bin\x86\Debug\ANA.pdb
+C:\ANA\ANA\bin\x86\Debug\ANA.xml
+C:\ANA\ANA\obj\x86\Debug\ANA.AlertaT.resources
+C:\ANA\ANA\obj\x86\Debug\ANA.Ayuda_Ventas.resources
+C:\ANA\ANA\obj\x86\Debug\ANA.Checklist.resources
+C:\ANA\ANA\obj\x86\Debug\ANA.Form1.resources
+C:\ANA\ANA\obj\x86\Debug\ANA.Registros.resources
+C:\ANA\ANA\obj\x86\Debug\ANA.IGENERAL.resources
+C:\ANA\ANA\obj\x86\Debug\ANA.Modems.resources
+C:\ANA\ANA\obj\x86\Debug\ANA.Resources.resources
+C:\ANA\ANA\obj\x86\Debug\ANA.Notas.resources
+C:\ANA\ANA\obj\x86\Debug\ANA.vbproj.GenerateResource.Cache
+C:\ANA\ANA\obj\x86\Debug\ANA.exe
+C:\ANA\ANA\obj\x86\Debug\ANA.xml
+C:\ANA\ANA\obj\x86\Debug\ANA.pdb
