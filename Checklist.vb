@@ -897,20 +897,22 @@ Public Class Checklist
         Me.Vfisicas.Controls.Add(chkBox1)
         Me.Vfisicas.Controls.Add(chkBox2)
         Me.Vfisicas.Controls.Add(chkBox3)
-        Form1.TGUIONES.Text = "Antes de Reaprovionar servicio: 1) revisa que el perfil en LDAP sea CM-EMTA y que en Siebel tenga el servicio activo; de lo contrario envía a lideres para corregir el servicio." & vbNewLine & "2)Tambíen debes validar el Archivo de configuración, el cual puedes validar en SMNET; y el servicio debe subir, de lo contrario escala a lideres Indicando que el archivo de configurcion de TOIP no está creado." & vbNewLine & vbNewLine & Form1.TGUIONES.Text
+        Form1.TGUIONES.Text = "Antes de Reaprovionar servicio: 1) revisa que el perfil en LDAP sea CM-EMTA y que en Siebel tenga el servicio activo; de lo contrario envía a lideres para corregir el servicio." & vbNewLine & "2)Tambíen debes validar el Archivo de configuración en PRUEBAS/CNR / ARCHIVO DE CONFIGURACION..., en SMNET; y si no carga escala a lideres Indicando que el archivo de configurcion de TOIP no está creado." & vbNewLine & vbNewLine & Form1.TGUIONES.Text
     End Sub
 
     Private Sub COMPLEMENTO()
-        VarGlob.Checklist = "Servicio Afectado: " & CServicio.Text & " Tecnologia: " & CTecnologia.Text &
-" Diagnostico: " & CDiagnostico.Text & " validaciones: Sevicio Activo, Sin CCC"
+        VarGlob.Checklist = " >> Servicio Afectado: " & CServicio.Text & " Tecnologia: " & CTecnologia.Text &
+" Diagnostico: " & CDiagnostico.Text & " validaciones: Sevicio Activo, "
     End Sub
     Private Sub COMPLEMENTO2()
         VarGlob.Checklist = vbNewLine & "Diagnostico: " & CDiagnostico.Text & " Se realiza procedimiento solicitado por el Cliente: "
     End Sub
 
     Private Sub RDTH()
-        VarGlob.Checklist = VarGlob.Checklist & "Modelo del Deco: " & vbNewLine & "NS: " & vbNewLine _
- & "Potencia: " & vbNewLine & "Nivel de Señal:" & vbNewLine & "Canales Afectados: " & vbNewLine
+        If (CServicio.Text = "DTH" And CheckBox1.Checked = False) Then
+            VarGlob.Checklist = VarGlob.Checklist & "Modelo del Deco: " & vbNewLine & "NS: " & vbNewLine _
+             & "Potencia: " & vbNewLine & "Nivel de Señal:" & vbNewLine & "Canales Afectados: " & vbNewLine
+        End If
     End Sub
 
     Private Sub COMPLEMENTO5()
@@ -999,10 +1001,8 @@ Public Class Checklist
                 'FALLAS ASOCIADAS A TV
                 'FALLA EQUIPO CABLE
                 Case "FALLA EQUIPO/CABLE"
-                    If (Form1.Tinteracion.Text = "FALLA SIEBEL/SMNET") Then
-                        VDTH()
-                    End If
                     COMPLEMENTO()
+                    RDTH()
                     If (chkBox1.Checked = True) Then
                         varglob.checklist = varglob.checklist & ", Se validan conexiones"
                     Else
@@ -1015,10 +1015,8 @@ Public Class Checklist
                     End If
                     'FALLA CONTROL
                 Case "FALLA CONTROL"
-                    If (Form1.Tinteracion.Text = "FALLA SIEBEL/SMNET") Then
-                        VDTH()
-                    End If
                     COMPLEMENTO()
+                    RDTH()
                     If (chkBox1.Checked = True) Then
                         varglob.checklist = varglob.checklist & ", Se validan Baterias, función ok"
                     End If
@@ -1033,10 +1031,8 @@ Public Class Checklist
                     SITIO3C()
                     'EQUIPO NO ENCIENDE
                 Case "EQUIPO NO ENCIENDE", "FALLA EQUIPO"
-                    If (Form1.Tinteracion.Text = "FALLA SIEBEL/SMNET") Then
-                        VDTH()
-                    End If
                     COMPLEMENTO()
+                    RDTH()
                     If (chkBox1.Checked = True) Then
                         VarGlob.Checklist = VarGlob.Checklist & ", Se validan conexiones, se prueba en otra toma"
                     End If
@@ -1046,10 +1042,8 @@ Public Class Checklist
                     SITIO2C()
                     'SIN SEÑAL/MALA CALIDAD DE IMAGEN
                 Case "MALA CALIDAD DE IMAGEN", "SIN PAQUETES / SN SEÑAL", "TV ANALOGA"
-                    If (Form1.Tinteracion.Text = "FALLA SIEBEL/SMNET") Then
-                        VDTH()
-                    End If
                     COMPLEMENTO()
+                    RDTH()
                     If (chkBox1.Checked = True) Then
                         VarGlob.Checklist = VarGlob.Checklist & ", Conexiones ok"
                     End If
@@ -1334,22 +1328,16 @@ Public Class Checklist
         VarGlob.SDiagnostico = Trim(CServicio.Text & "-" & CTecnologia.Text & "-" & CDiagnostico.Text)
         If (CheckBox1.Checked = False) Then
             Form1.Tinteracion.Text = "TERRENO"
-            Form1.TGUIONES.Text = "Sr/ Sra " & Form1.CNombreTextBox.Text & " su visita queda para (fecha acordada), en el transcurso de la (franja acordada).  Puede llamarnos a este mismo numero para consultar o modificar la fecha de la visita, tambien para validar los datos del tecnico asignado." & _
-    " Sr/sra " & Form1.CNombreTextBox.Text & " Le invitamos a responder nuestra encuensta de servicio, recuerde, si le gusto como le atendí califiqueme con 5. gracias por haberse comunicado con nosotros, En TigoUne estamos para usted, le deseamos " & Form1.Momento2(TimeOfDay.Hour)
+            Form1.TGUIONES.Text = "Sr/ Sra " & Form1.CNombreTextBox.Text & " su visita queda para (fecha acordada), en el transcurso de la (franja acordada).  Puede llamarnos a este mismo numero para consultar o modificar la fecha de la visita, tambien para validar los datos del tecnico asignado. Sr/sra " & Form1.CNombreTextBox.Text & " Le invitamos a responder nuestra encuensta de servicio, recuerde, si le gusto como le atendí califiqueme con 5. gracias por haberse comunicado con nosotros, En TigoUne estamos para usted, le deseamos " & Form1.Momento2(TimeOfDay.Hour)
         Else
             Form1.Tinteracion.Text = "SPC"
         End If
         Me.Close()
     End Sub
 
-    Private Sub VDTH()
-        If (CServicio.Text = "DTH") Then
-            RDTH()
-        End If
-    End Sub
     Private Sub SITIO4C()
         If (chkBox1.Checked = False And chkBox2.Checked = False And chkBox3.Checked = False And chkBox4.Checked = False) Then
-            varglob.checklist = varglob.checklist & ", No se encuentra en el Sitio "
+            VarGlob.Checklist = VarGlob.Checklist & ", No se encuentra en el Sitio "
         End If
     End Sub
     Private Sub SITIO3C()
@@ -1377,4 +1365,5 @@ Public Class Checklist
         SoporteAvanzado.BringToFront()
         SoporteAvanzado.Show()
     End Sub
+
 End Class

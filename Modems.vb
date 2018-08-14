@@ -5,8 +5,9 @@
         If (ComboBox1.Text = "TECHNICOLOR") Then
             MODEMSData.Rows.Clear()
             MODEMSData.Rows.Add("admin", "CPE#XXXXXX")
-            MODEMSData.Rows.Add("admin-UNE", "CM4CC3SS")
+            MODEMSData.Rows.Add("admin-UN3", "CM4CC3SS")
             MODEMSData.Rows.Add("", "admin")
+            MODEMSData.Rows.Add("admin", "admin")
             MODEMSData.Rows.Add("admin", "4CC3S0R3M0T0")
             MODEMSData.Rows.Add("admin", "ACCES0R3M0T0")
             MODEMSData.Rows.Add("4CC3S0UN3", "3NU4CC3S0CM")

@@ -40,6 +40,8 @@ Partial Class Form1
         Me.PIntegralT = New System.Windows.Forms.TextBox()
         Me.PIndividualT = New System.Windows.Forms.TextBox()
         Me.DBasicos = New System.Windows.Forms.GroupBox()
+        Me.Button15 = New System.Windows.Forms.Button()
+        Me.Button14 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DptoT = New System.Windows.Forms.ComboBox()
@@ -66,8 +68,6 @@ Partial Class Form1
         Me.CCvisible = New System.Windows.Forms.TextBox()
         Me.Button16 = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
-        Me.Button15 = New System.Windows.Forms.Button()
-        Me.Button14 = New System.Windows.Forms.Button()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.TxDireccion = New System.Windows.Forms.TextBox()
         Me.DContacto = New System.Windows.Forms.GroupBox()
@@ -80,12 +80,12 @@ Partial Class Form1
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.Button17 = New System.Windows.Forms.Button()
         Me.Button22 = New System.Windows.Forms.Button()
-        Me.CorreoT = New System.Windows.Forms.TextBox()
         Me.Button20 = New System.Windows.Forms.Button()
         Me.Button18 = New System.Windows.Forms.Button()
         Me.Button21 = New System.Windows.Forms.Button()
         Me.ComboBox40 = New System.Windows.Forms.ComboBox()
         Me.CCContactoT = New System.Windows.Forms.TextBox()
+        Me.CorreoT = New System.Windows.Forms.TextBox()
         Me.ValSMNET = New System.Windows.Forms.GroupBox()
         Me.Button13 = New System.Windows.Forms.Button()
         Me.Button12 = New System.Windows.Forms.Button()
@@ -107,6 +107,7 @@ Partial Class Form1
         Me.LbSegndos = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.DPlantilla = New System.Windows.Forms.GroupBox()
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
         Me.BtActualizar = New System.Windows.Forms.Button()
         Me.txtProceso = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -114,6 +115,7 @@ Partial Class Form1
         Me.BtSPC = New System.Windows.Forms.Button()
         Me.Tinteracion = New System.Windows.Forms.ComboBox()
         Me.Dubicacion = New System.Windows.Forms.GroupBox()
+        Me.Button6 = New System.Windows.Forms.Button()
         Me.CSerial = New System.Windows.Forms.TextBox()
         Me.ChTec = New System.Windows.Forms.CheckBox()
         Me.Button4 = New System.Windows.Forms.Button()
@@ -126,6 +128,7 @@ Partial Class Form1
         Me.DiademaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LlamadasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformacionGeneralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RegistrarFallaAplicativoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MODEMSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -189,9 +192,10 @@ Partial Class Form1
         Me.GAtajoFrm = New System.Windows.Forms.GroupBox()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.Tayuda = New System.Windows.Forms.TextBox()
-        Me.IAna = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Tnumero = New System.Windows.Forms.TextBox()
+        Me.IAna = New System.Windows.Forms.PictureBox()
+        Me.DG1 = New System.Windows.Forms.GroupBox()
         CNombreLabel = New System.Windows.Forms.Label()
         CCTitularLabel = New System.Windows.Forms.Label()
         CausaLabel = New System.Windows.Forms.Label()
@@ -215,14 +219,15 @@ Partial Class Form1
         Me.MenuPpal.SuspendLayout()
         Me.GEstadisticas.SuspendLayout()
         Me.GAtajoFrm.SuspendLayout()
-        CType(Me.IAna, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.IAna, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.DG1.SuspendLayout()
         Me.SuspendLayout()
         '
         'CNombreLabel
         '
         CNombreLabel.AutoSize = True
-        CNombreLabel.Location = New System.Drawing.Point(6, 47)
+        CNombreLabel.Location = New System.Drawing.Point(6, 44)
         CNombreLabel.Name = "CNombreLabel"
         CNombreLabel.Size = New System.Drawing.Size(47, 13)
         CNombreLabel.TabIndex = 6
@@ -231,7 +236,7 @@ Partial Class Form1
         'CCTitularLabel
         '
         CCTitularLabel.AutoSize = True
-        CCTitularLabel.Location = New System.Drawing.Point(6, 72)
+        CCTitularLabel.Location = New System.Drawing.Point(9, 104)
         CCTitularLabel.Name = "CCTitularLabel"
         CCTitularLabel.Size = New System.Drawing.Size(47, 13)
         CCTitularLabel.TabIndex = 8
@@ -293,7 +298,7 @@ Partial Class Form1
         'Id_llamadaLabel
         '
         Id_llamadaLabel.AutoSize = True
-        Id_llamadaLabel.Location = New System.Drawing.Point(6, 22)
+        Id_llamadaLabel.Location = New System.Drawing.Point(6, 19)
         Id_llamadaLabel.Name = "Id_llamadaLabel"
         Id_llamadaLabel.Size = New System.Drawing.Size(58, 13)
         Id_llamadaLabel.TabIndex = 6
@@ -302,7 +307,7 @@ Partial Class Form1
         'IdllamadaT
         '
         Me.IdllamadaT.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.IdllamadaT.Location = New System.Drawing.Point(68, 17)
+        Me.IdllamadaT.Location = New System.Drawing.Point(68, 14)
         Me.IdllamadaT.Name = "IdllamadaT"
         Me.IdllamadaT.Size = New System.Drawing.Size(185, 23)
         Me.IdllamadaT.TabIndex = 0
@@ -310,7 +315,7 @@ Partial Class Form1
         'CNombreTextBox
         '
         Me.CNombreTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CNombreTextBox.Location = New System.Drawing.Point(68, 41)
+        Me.CNombreTextBox.Location = New System.Drawing.Point(68, 38)
         Me.CNombreTextBox.Name = "CNombreTextBox"
         Me.CNombreTextBox.Size = New System.Drawing.Size(185, 23)
         Me.CNombreTextBox.TabIndex = 1
@@ -318,10 +323,10 @@ Partial Class Form1
         'CCTitularTextBox
         '
         Me.CCTitularTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CCTitularTextBox.Location = New System.Drawing.Point(68, 66)
+        Me.CCTitularTextBox.Location = New System.Drawing.Point(71, 99)
         Me.CCTitularTextBox.Name = "CCTitularTextBox"
-        Me.CCTitularTextBox.Size = New System.Drawing.Size(154, 23)
-        Me.CCTitularTextBox.TabIndex = 2
+        Me.CCTitularTextBox.Size = New System.Drawing.Size(140, 23)
+        Me.CCTitularTextBox.TabIndex = 1
         '
         'IdServicioT
         '
@@ -349,38 +354,44 @@ Partial Class Form1
         '
         'DBasicos
         '
-        Me.DBasicos.Controls.Add(Me.Button2)
-        Me.DBasicos.Controls.Add(Me.Label1)
-        Me.DBasicos.Controls.Add(Me.DptoT)
-        Me.DBasicos.Controls.Add(Me.TCausa)
-        Me.DBasicos.Controls.Add(Me.AreaTextBox)
-        Me.DBasicos.Controls.Add(Me.ComboBox1)
-        Me.DBasicos.Controls.Add(Me.CiudadT)
-        Me.DBasicos.Controls.Add(Me.CCTitularTextBox)
-        Me.DBasicos.Controls.Add(Me.CCvisible)
-        Me.DBasicos.Controls.Add(Me.Button16)
-        Me.DBasicos.Controls.Add(Me.Button8)
+        Me.DBasicos.Controls.Add(Me.CNombreTextBox)
         Me.DBasicos.Controls.Add(Me.Button15)
         Me.DBasicos.Controls.Add(Me.Button14)
         Me.DBasicos.Controls.Add(Me.IdllamadaT)
-        Me.DBasicos.Controls.Add(Me.Label13)
-        Me.DBasicos.Controls.Add(Me.TxDireccion)
         Me.DBasicos.Controls.Add(CausaLabel)
         Me.DBasicos.Controls.Add(Id_llamadaLabel)
-        Me.DBasicos.Controls.Add(CCTitularLabel)
         Me.DBasicos.Controls.Add(CNombreLabel)
-        Me.DBasicos.Controls.Add(Me.CNombreTextBox)
         Me.DBasicos.Location = New System.Drawing.Point(2, 23)
         Me.DBasicos.Name = "DBasicos"
-        Me.DBasicos.Size = New System.Drawing.Size(286, 231)
+        Me.DBasicos.Size = New System.Drawing.Size(286, 72)
         Me.DBasicos.TabIndex = 1
         Me.DBasicos.TabStop = False
         Me.DBasicos.Text = "Datos Generales"
         '
+        'Button15
+        '
+        Me.Button15.Image = CType(resources.GetObject("Button15.Image"), System.Drawing.Image)
+        Me.Button15.Location = New System.Drawing.Point(254, 37)
+        Me.Button15.Name = "Button15"
+        Me.Button15.Size = New System.Drawing.Size(24, 23)
+        Me.Button15.TabIndex = 21
+        Me.Button15.TabStop = False
+        Me.Button15.UseVisualStyleBackColor = True
+        '
+        'Button14
+        '
+        Me.Button14.Image = CType(resources.GetObject("Button14.Image"), System.Drawing.Image)
+        Me.Button14.Location = New System.Drawing.Point(254, 14)
+        Me.Button14.Name = "Button14"
+        Me.Button14.Size = New System.Drawing.Size(24, 23)
+        Me.Button14.TabIndex = 20
+        Me.Button14.TabStop = False
+        Me.Button14.UseVisualStyleBackColor = True
+        '
         'Button2
         '
         Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.Location = New System.Drawing.Point(254, 114)
+        Me.Button2.Location = New System.Drawing.Point(258, 18)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(24, 23)
         Me.Button2.TabIndex = 181
@@ -390,32 +401,31 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 122)
+        Me.Label1.Location = New System.Drawing.Point(7, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(180, 13)
+        Me.Label1.Size = New System.Drawing.Size(0, 13)
         Me.Label1.TabIndex = 180
-        Me.Label1.Text = "Observaciones: User manifiesta que:"
         '
         'DptoT
         '
         Me.DptoT.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DptoT.FormattingEnabled = True
-        Me.DptoT.Location = New System.Drawing.Point(5, 203)
+        Me.DptoT.Location = New System.Drawing.Point(5, 147)
         Me.DptoT.Name = "DptoT"
         Me.DptoT.Size = New System.Drawing.Size(92, 21)
-        Me.DptoT.TabIndex = 5
+        Me.DptoT.TabIndex = 3
         Me.DptoT.Text = "ANTIOQUIA"
         '
         'TCausa
         '
         Me.TCausa.ContextMenuStrip = Me.PlanillasRapidas
         Me.TCausa.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TCausa.Location = New System.Drawing.Point(5, 137)
+        Me.TCausa.Location = New System.Drawing.Point(7, 17)
         Me.TCausa.Multiline = True
         Me.TCausa.Name = "TCausa"
         Me.TCausa.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TCausa.Size = New System.Drawing.Size(273, 63)
-        Me.TCausa.TabIndex = 4
+        Me.TCausa.Size = New System.Drawing.Size(249, 80)
+        Me.TCausa.TabIndex = 0
         '
         'PlanillasRapidas
         '
@@ -516,10 +526,10 @@ Partial Class Form1
         Me.AreaTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.AreaTextBox.Enabled = False
         Me.AreaTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.AreaTextBox.Location = New System.Drawing.Point(224, 203)
+        Me.AreaTextBox.Location = New System.Drawing.Point(219, 147)
         Me.AreaTextBox.Name = "AreaTextBox"
-        Me.AreaTextBox.Size = New System.Drawing.Size(55, 20)
-        Me.AreaTextBox.TabIndex = 39
+        Me.AreaTextBox.Size = New System.Drawing.Size(61, 20)
+        Me.AreaTextBox.TabIndex = 5
         Me.AreaTextBox.TabStop = False
         Me.AreaTextBox.Text = "SIEBEL"
         '
@@ -529,7 +539,7 @@ Partial Class Form1
         Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"", "- 0", "- 1", "- 2", "- 3", "- 4", "- 5", "- 6", "- 7", "- 8", "- 9"})
-        Me.ComboBox1.Location = New System.Drawing.Point(214, 66)
+        Me.ComboBox1.Location = New System.Drawing.Point(217, 99)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(39, 23)
         Me.ComboBox1.TabIndex = 3
@@ -539,16 +549,16 @@ Partial Class Form1
         '
         Me.CiudadT.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CiudadT.FormattingEnabled = True
-        Me.CiudadT.Location = New System.Drawing.Point(99, 203)
+        Me.CiudadT.Location = New System.Drawing.Point(97, 147)
         Me.CiudadT.Name = "CiudadT"
         Me.CiudadT.Size = New System.Drawing.Size(122, 21)
-        Me.CiudadT.TabIndex = 6
+        Me.CiudadT.TabIndex = 4
         Me.CiudadT.Text = "MEDELLIN"
         '
         'CCvisible
         '
         Me.CCvisible.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CCvisible.Location = New System.Drawing.Point(72, 68)
+        Me.CCvisible.Location = New System.Drawing.Point(82, 112)
         Me.CCvisible.Name = "CCvisible"
         Me.CCvisible.Size = New System.Drawing.Size(29, 23)
         Me.CCvisible.TabIndex = 44
@@ -558,7 +568,7 @@ Partial Class Form1
         'Button16
         '
         Me.Button16.Image = CType(resources.GetObject("Button16.Image"), System.Drawing.Image)
-        Me.Button16.Location = New System.Drawing.Point(254, 66)
+        Me.Button16.Location = New System.Drawing.Point(257, 99)
         Me.Button16.Name = "Button16"
         Me.Button16.Size = New System.Drawing.Size(24, 23)
         Me.Button16.TabIndex = 22
@@ -568,37 +578,17 @@ Partial Class Form1
         'Button8
         '
         Me.Button8.Image = CType(resources.GetObject("Button8.Image"), System.Drawing.Image)
-        Me.Button8.Location = New System.Drawing.Point(254, 91)
+        Me.Button8.Location = New System.Drawing.Point(257, 123)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(24, 23)
         Me.Button8.TabIndex = 27
         Me.Button8.TabStop = False
         Me.Button8.UseVisualStyleBackColor = True
         '
-        'Button15
-        '
-        Me.Button15.Image = CType(resources.GetObject("Button15.Image"), System.Drawing.Image)
-        Me.Button15.Location = New System.Drawing.Point(254, 40)
-        Me.Button15.Name = "Button15"
-        Me.Button15.Size = New System.Drawing.Size(24, 23)
-        Me.Button15.TabIndex = 21
-        Me.Button15.TabStop = False
-        Me.Button15.UseVisualStyleBackColor = True
-        '
-        'Button14
-        '
-        Me.Button14.Image = CType(resources.GetObject("Button14.Image"), System.Drawing.Image)
-        Me.Button14.Location = New System.Drawing.Point(254, 17)
-        Me.Button14.Name = "Button14"
-        Me.Button14.Size = New System.Drawing.Size(24, 23)
-        Me.Button14.TabIndex = 20
-        Me.Button14.TabStop = False
-        Me.Button14.UseVisualStyleBackColor = True
-        '
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(5, 95)
+        Me.Label13.Location = New System.Drawing.Point(8, 127)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(52, 13)
         Me.Label13.TabIndex = 43
@@ -607,10 +597,10 @@ Partial Class Form1
         'TxDireccion
         '
         Me.TxDireccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxDireccion.Location = New System.Drawing.Point(68, 91)
+        Me.TxDireccion.Location = New System.Drawing.Point(71, 123)
         Me.TxDireccion.Name = "TxDireccion"
         Me.TxDireccion.Size = New System.Drawing.Size(185, 23)
-        Me.TxDireccion.TabIndex = 3
+        Me.TxDireccion.TabIndex = 2
         '
         'DContacto
         '
@@ -623,7 +613,6 @@ Partial Class Form1
         Me.DContacto.Controls.Add(Me.ComboBox2)
         Me.DContacto.Controls.Add(Me.Button17)
         Me.DContacto.Controls.Add(Me.Button22)
-        Me.DContacto.Controls.Add(Me.CorreoT)
         Me.DContacto.Controls.Add(Me.Button20)
         Me.DContacto.Controls.Add(Me.Button18)
         Me.DContacto.Controls.Add(Me.Button21)
@@ -631,10 +620,10 @@ Partial Class Form1
         Me.DContacto.Controls.Add(Me.ComboBox40)
         Me.DContacto.Controls.Add(Me.CCContactoT)
         Me.DContacto.Controls.Add(Label12)
-        Me.DContacto.Location = New System.Drawing.Point(4, 254)
+        Me.DContacto.Location = New System.Drawing.Point(0, 254)
         Me.DContacto.Name = "DContacto"
-        Me.DContacto.Size = New System.Drawing.Size(287, 124)
-        Me.DContacto.TabIndex = 2
+        Me.DContacto.Size = New System.Drawing.Size(291, 124)
+        Me.DContacto.TabIndex = 3
         Me.DContacto.TabStop = False
         Me.DContacto.Text = "Informacion Contacto"
         '
@@ -674,7 +663,7 @@ Partial Class Form1
         Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox1.Location = New System.Drawing.Point(6, 95)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(108, 23)
+        Me.TextBox1.Size = New System.Drawing.Size(121, 23)
         Me.TextBox1.TabIndex = 4
         Me.TextBox1.Text = "cliente"
         '
@@ -704,12 +693,13 @@ Partial Class Form1
         Me.ComboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.ComboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.ComboBox2.BackColor = System.Drawing.Color.PaleGoldenrod
+        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple
         Me.ComboBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Items.AddRange(New Object() {"@sincorreo.com", "@hotmail.com", "@hotmail.es", "@outlook.com", "@outlook.es", "@gmail.com", "@yahoo.com", "@yahoo.es", "@live.es", "@live.com", "@une.net.co"})
-        Me.ComboBox2.Location = New System.Drawing.Point(112, 95)
+        Me.ComboBox2.Location = New System.Drawing.Point(126, 94)
         Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(144, 24)
+        Me.ComboBox2.Size = New System.Drawing.Size(132, 24)
         Me.ComboBox2.TabIndex = 5
         Me.ComboBox2.Text = " @sincorreo.com"
         '
@@ -732,17 +722,6 @@ Partial Class Form1
         Me.Button22.TabIndex = 60
         Me.Button22.TabStop = False
         Me.Button22.UseVisualStyleBackColor = True
-        '
-        'CorreoT
-        '
-        Me.CorreoT.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CorreoT.Location = New System.Drawing.Point(215, 97)
-        Me.CorreoT.Name = "CorreoT"
-        Me.CorreoT.Size = New System.Drawing.Size(20, 23)
-        Me.CorreoT.TabIndex = 11
-        Me.CorreoT.TabStop = False
-        Me.CorreoT.Text = "cliente@sincorreo.com"
-        Me.CorreoT.Visible = False
         '
         'Button20
         '
@@ -794,6 +773,17 @@ Partial Class Form1
         Me.CCContactoT.Size = New System.Drawing.Size(179, 23)
         Me.CCContactoT.TabIndex = 1
         '
+        'CorreoT
+        '
+        Me.CorreoT.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CorreoT.Location = New System.Drawing.Point(166, 45)
+        Me.CorreoT.Name = "CorreoT"
+        Me.CorreoT.Size = New System.Drawing.Size(100, 23)
+        Me.CorreoT.TabIndex = 11
+        Me.CorreoT.TabStop = False
+        Me.CorreoT.Text = "cliente@sincorreo.com"
+        Me.CorreoT.Visible = False
+        '
         'ValSMNET
         '
         Me.ValSMNET.Controls.Add(Me.Button13)
@@ -808,7 +798,7 @@ Partial Class Form1
         Me.ValSMNET.Location = New System.Drawing.Point(2, 377)
         Me.ValSMNET.Name = "ValSMNET"
         Me.ValSMNET.Size = New System.Drawing.Size(289, 97)
-        Me.ValSMNET.TabIndex = 3
+        Me.ValSMNET.TabIndex = 4
         Me.ValSMNET.TabStop = False
         Me.ValSMNET.Text = "Informacion Pruebas"
         '
@@ -1010,6 +1000,7 @@ Partial Class Form1
         '
         Me.DPlantilla.BackColor = System.Drawing.Color.Transparent
         Me.DPlantilla.ContextMenuStrip = Me.PlanillasRapidas
+        Me.DPlantilla.Controls.Add(Me.CheckBox3)
         Me.DPlantilla.Controls.Add(Me.BtActualizar)
         Me.DPlantilla.Controls.Add(Me.txtProceso)
         Me.DPlantilla.Controls.Add(Me.Button1)
@@ -1022,6 +1013,18 @@ Partial Class Form1
         Me.DPlantilla.Size = New System.Drawing.Size(318, 337)
         Me.DPlantilla.TabIndex = 6
         Me.DPlantilla.TabStop = False
+        '
+        'CheckBox3
+        '
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.Checked = True
+        Me.CheckBox3.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox3.Location = New System.Drawing.Point(99, 311)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(76, 20)
+        Me.CheckBox3.TabIndex = 160
+        Me.CheckBox3.Text = "Sn Falla"
+        Me.CheckBox3.UseVisualStyleBackColor = True
         '
         'BtActualizar
         '
@@ -1043,7 +1046,7 @@ Partial Class Form1
         Me.txtProceso.Multiline = True
         Me.txtProceso.Name = "txtProceso"
         Me.txtProceso.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtProceso.Size = New System.Drawing.Size(305, 255)
+        Me.txtProceso.Size = New System.Drawing.Size(305, 261)
         Me.txtProceso.TabIndex = 0
         Me.txtProceso.TabStop = False
         Me.txtProceso.Text = "Aquí se generará la Plantilla"
@@ -1073,7 +1076,7 @@ Partial Class Form1
         Me.BtSPC.Enabled = False
         Me.BtSPC.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtSPC.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.BtSPC.Location = New System.Drawing.Point(178, 302)
+        Me.BtSPC.Location = New System.Drawing.Point(178, 307)
         Me.BtSPC.Name = "BtSPC"
         Me.BtSPC.Size = New System.Drawing.Size(134, 26)
         Me.BtSPC.TabIndex = 2
@@ -1094,13 +1097,24 @@ Partial Class Form1
         '
         'Dubicacion
         '
+        Me.Dubicacion.Controls.Add(Me.Button6)
         Me.Dubicacion.Controls.Add(Me.CSerial)
         Me.Dubicacion.Controls.Add(Me.ChTec)
         Me.Dubicacion.Location = New System.Drawing.Point(1, 470)
         Me.Dubicacion.Name = "Dubicacion"
         Me.Dubicacion.Size = New System.Drawing.Size(290, 40)
-        Me.Dubicacion.TabIndex = 4
+        Me.Dubicacion.TabIndex = 5
         Me.Dubicacion.TabStop = False
+        '
+        'Button6
+        '
+        Me.Button6.Image = CType(resources.GetObject("Button6.Image"), System.Drawing.Image)
+        Me.Button6.Location = New System.Drawing.Point(260, 12)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(24, 23)
+        Me.Button6.TabIndex = 20
+        Me.Button6.TabStop = False
+        Me.Button6.UseVisualStyleBackColor = True
         '
         'CSerial
         '
@@ -1109,7 +1123,7 @@ Partial Class Form1
         Me.CSerial.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CSerial.Location = New System.Drawing.Point(69, 12)
         Me.CSerial.Name = "CSerial"
-        Me.CSerial.Size = New System.Drawing.Size(215, 23)
+        Me.CSerial.Size = New System.Drawing.Size(185, 23)
         Me.CSerial.TabIndex = 163
         '
         'ChTec
@@ -1124,7 +1138,7 @@ Partial Class Form1
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(612, 170)
+        Me.Button4.Location = New System.Drawing.Point(612, 172)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(215, 23)
         Me.Button4.TabIndex = 161
@@ -1136,7 +1150,7 @@ Partial Class Form1
         '
         Me.Button5.BackColor = System.Drawing.Color.Turquoise
         Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.Location = New System.Drawing.Point(611, 118)
+        Me.Button5.Location = New System.Drawing.Point(611, 121)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(216, 32)
         Me.Button5.TabIndex = 20
@@ -1157,7 +1171,7 @@ Partial Class Form1
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(612, 147)
+        Me.Button3.Location = New System.Drawing.Point(612, 150)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(215, 23)
         Me.Button3.TabIndex = 170
@@ -1176,7 +1190,7 @@ Partial Class Form1
         '
         'FucionesToolStripMenuItem
         '
-        Me.FucionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NotasToolStripMenuItem, Me.DiademaToolStripMenuItem, Me.LlamadasToolStripMenuItem, Me.InformacionGeneralToolStripMenuItem, Me.MODEMSToolStripMenuItem, Me.ToolStripSeparator2, Me.SalirToolStripMenuItem})
+        Me.FucionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NotasToolStripMenuItem, Me.DiademaToolStripMenuItem, Me.LlamadasToolStripMenuItem, Me.InformacionGeneralToolStripMenuItem, Me.RegistrarFallaAplicativoToolStripMenuItem, Me.MODEMSToolStripMenuItem, Me.ToolStripSeparator2, Me.SalirToolStripMenuItem})
         Me.FucionesToolStripMenuItem.Name = "FucionesToolStripMenuItem"
         Me.FucionesToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
         Me.FucionesToolStripMenuItem.Text = "Acceso"
@@ -1203,7 +1217,13 @@ Partial Class Form1
         '
         Me.InformacionGeneralToolStripMenuItem.Name = "InformacionGeneralToolStripMenuItem"
         Me.InformacionGeneralToolStripMenuItem.Size = New System.Drawing.Size(234, 22)
-        Me.InformacionGeneralToolStripMenuItem.Text = "Informacion General"
+        Me.InformacionGeneralToolStripMenuItem.Text = "Claves de Acceso"
+        '
+        'RegistrarFallaAplicativoToolStripMenuItem
+        '
+        Me.RegistrarFallaAplicativoToolStripMenuItem.Name = "RegistrarFallaAplicativoToolStripMenuItem"
+        Me.RegistrarFallaAplicativoToolStripMenuItem.Size = New System.Drawing.Size(234, 22)
+        Me.RegistrarFallaAplicativoToolStripMenuItem.Text = "Registrar Falla Aplicativo"
         '
         'MODEMSToolStripMenuItem
         '
@@ -1277,8 +1297,8 @@ Partial Class Form1
         '
         Me.CorreoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CorreoToolStripMenuItem1, Me.ContingenciaToolStripMenuItem})
         Me.CorreoToolStripMenuItem.Name = "CorreoToolStripMenuItem"
-        Me.CorreoToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
-        Me.CorreoToolStripMenuItem.Text = "Correo"
+        Me.CorreoToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+        Me.CorreoToolStripMenuItem.Text = ">> Correo"
         '
         'CorreoToolStripMenuItem1
         '
@@ -1295,26 +1315,26 @@ Partial Class Form1
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(194, 6)
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(213, 6)
         '
         'WFOToolStripMenuItem
         '
         Me.WFOToolStripMenuItem.Name = "WFOToolStripMenuItem"
-        Me.WFOToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
-        Me.WFOToolStripMenuItem.Text = "WFO"
+        Me.WFOToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+        Me.WFOToolStripMenuItem.Text = ">> WFO"
         '
         'SMNETToolStripMenuItem
         '
         Me.SMNETToolStripMenuItem.Name = "SMNETToolStripMenuItem"
-        Me.SMNETToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
-        Me.SMNETToolStripMenuItem.Text = "SMNET"
+        Me.SMNETToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+        Me.SMNETToolStripMenuItem.Text = ">> SMNET"
         '
         'SiebelToolStripMenuItem1
         '
         Me.SiebelToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SiebelPrivadoToolStripMenuItem1, Me.SiebelToolStripMenuItem, Me.Siebel2ToolStripMenuItem})
         Me.SiebelToolStripMenuItem1.Name = "SiebelToolStripMenuItem1"
-        Me.SiebelToolStripMenuItem1.Size = New System.Drawing.Size(197, 22)
-        Me.SiebelToolStripMenuItem1.Text = "Siebel"
+        Me.SiebelToolStripMenuItem1.Size = New System.Drawing.Size(216, 22)
+        Me.SiebelToolStripMenuItem1.Text = ">> Siebel"
         '
         'SiebelPrivadoToolStripMenuItem1
         '
@@ -1337,125 +1357,125 @@ Partial Class Form1
         'GDIToolStripMenuItem
         '
         Me.GDIToolStripMenuItem.Name = "GDIToolStripMenuItem"
-        Me.GDIToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
+        Me.GDIToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
         Me.GDIToolStripMenuItem.Text = "GDI"
         '
         'MaestroDeContenidosToolStripMenuItem
         '
         Me.MaestroDeContenidosToolStripMenuItem.Name = "MaestroDeContenidosToolStripMenuItem"
-        Me.MaestroDeContenidosToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
-        Me.MaestroDeContenidosToolStripMenuItem.Text = "Maestro de Contenidos"
+        Me.MaestroDeContenidosToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+        Me.MaestroDeContenidosToolStripMenuItem.Text = ">> Maestro de Contenidos"
         '
         'VisitasToolStripMenuItem
         '
         Me.VisitasToolStripMenuItem.Name = "VisitasToolStripMenuItem"
-        Me.VisitasToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
+        Me.VisitasToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
         Me.VisitasToolStripMenuItem.Text = "Visitas"
         '
         'ChatToolStripMenuItem
         '
         Me.ChatToolStripMenuItem.Name = "ChatToolStripMenuItem"
-        Me.ChatToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
-        Me.ChatToolStripMenuItem.Text = "Chat"
+        Me.ChatToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+        Me.ChatToolStripMenuItem.Text = ">> Chat"
         '
         'TR69ToolStripMenuItem
         '
         Me.TR69ToolStripMenuItem.Name = "TR69ToolStripMenuItem"
-        Me.TR69ToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
-        Me.TR69ToolStripMenuItem.Text = "TR69"
+        Me.TR69ToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+        Me.TR69ToolStripMenuItem.Text = ">> TR69"
         '
         'ZonaEToolStripMenuItem
         '
         Me.ZonaEToolStripMenuItem.Name = "ZonaEToolStripMenuItem"
-        Me.ZonaEToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
+        Me.ZonaEToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
         Me.ZonaEToolStripMenuItem.Text = "Zona E"
         '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(194, 6)
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(213, 6)
         '
         'ContratoToolStripMenuItem
         '
         Me.ContratoToolStripMenuItem.Name = "ContratoToolStripMenuItem"
-        Me.ContratoToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
-        Me.ContratoToolStripMenuItem.Text = "Contrato"
+        Me.ContratoToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+        Me.ContratoToolStripMenuItem.Text = ">> Contrato"
         '
         'RadarToolStripMenuItem
         '
         Me.RadarToolStripMenuItem.Name = "RadarToolStripMenuItem"
-        Me.RadarToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
-        Me.RadarToolStripMenuItem.Text = "Radar"
+        Me.RadarToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+        Me.RadarToolStripMenuItem.Text = ">> CMI"
         '
         'DataCreditoToolStripMenuItem1
         '
         Me.DataCreditoToolStripMenuItem1.Name = "DataCreditoToolStripMenuItem1"
-        Me.DataCreditoToolStripMenuItem1.Size = New System.Drawing.Size(197, 22)
+        Me.DataCreditoToolStripMenuItem1.Size = New System.Drawing.Size(216, 22)
         Me.DataCreditoToolStripMenuItem1.Text = "DataCredito"
         '
         'SimuladorVentasToolStripMenuItem
         '
         Me.SimuladorVentasToolStripMenuItem.Name = "SimuladorVentasToolStripMenuItem"
-        Me.SimuladorVentasToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
+        Me.SimuladorVentasToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
         Me.SimuladorVentasToolStripMenuItem.Text = "Simulador Ventas"
         '
         'ConfrontaToolStripMenuItem
         '
         Me.ConfrontaToolStripMenuItem.Name = "ConfrontaToolStripMenuItem"
-        Me.ConfrontaToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
+        Me.ConfrontaToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
         Me.ConfrontaToolStripMenuItem.Text = "Confronta"
         '
         'ToolStripSeparator5
         '
         Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
-        Me.ToolStripSeparator5.Size = New System.Drawing.Size(194, 6)
+        Me.ToolStripSeparator5.Size = New System.Drawing.Size(213, 6)
         '
         'QuizToolStripMenuItem
         '
         Me.QuizToolStripMenuItem.Name = "QuizToolStripMenuItem"
-        Me.QuizToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
+        Me.QuizToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
         Me.QuizToolStripMenuItem.Text = "Evaluación Mensual"
         '
         'NovedadesToolStripMenuItem
         '
         Me.NovedadesToolStripMenuItem.Name = "NovedadesToolStripMenuItem"
-        Me.NovedadesToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
+        Me.NovedadesToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
         Me.NovedadesToolStripMenuItem.Text = "Novedades"
         '
         'MonitoreosToolStripMenuItem
         '
         Me.MonitoreosToolStripMenuItem.Name = "MonitoreosToolStripMenuItem"
-        Me.MonitoreosToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
+        Me.MonitoreosToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
         Me.MonitoreosToolStripMenuItem.Text = "Monitoreos"
         '
         'AutogestionWTSToolStripMenuItem
         '
         Me.AutogestionWTSToolStripMenuItem.Name = "AutogestionWTSToolStripMenuItem"
-        Me.AutogestionWTSToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
+        Me.AutogestionWTSToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
         Me.AutogestionWTSToolStripMenuItem.Text = "Autogestion WTS"
         '
         'SrUNEToolStripMenuItem
         '
         Me.SrUNEToolStripMenuItem.Name = "SrUNEToolStripMenuItem"
-        Me.SrUNEToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
+        Me.SrUNEToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
         Me.SrUNEToolStripMenuItem.Text = "Sr UNE"
         '
         'GISToolStripMenuItem
         '
         Me.GISToolStripMenuItem.Name = "GISToolStripMenuItem"
-        Me.GISToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
+        Me.GISToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
         Me.GISToolStripMenuItem.Text = "GIS"
         '
         'BackSSOToolStripMenuItem
         '
         Me.BackSSOToolStripMenuItem.Name = "BackSSOToolStripMenuItem"
-        Me.BackSSOToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
+        Me.BackSSOToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
         Me.BackSSOToolStripMenuItem.Text = "BackSSO"
         '
         'BackSISAToolStripMenuItem
         '
         Me.BackSISAToolStripMenuItem.Name = "BackSISAToolStripMenuItem"
-        Me.BackSISAToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
+        Me.BackSISAToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
         Me.BackSISAToolStripMenuItem.Text = "BackSISAC"
         '
         'LinksDeAyudaToolStripMenuItem
@@ -1468,79 +1488,79 @@ Partial Class Form1
         'ANSToolStripMenuItem1
         '
         Me.ANSToolStripMenuItem1.Name = "ANSToolStripMenuItem1"
-        Me.ANSToolStripMenuItem1.Size = New System.Drawing.Size(179, 22)
+        Me.ANSToolStripMenuItem1.Size = New System.Drawing.Size(198, 22)
         Me.ANSToolStripMenuItem1.Text = "ANS"
         '
         'GuionesSTToolStripMenuItem
         '
         Me.GuionesSTToolStripMenuItem.Name = "GuionesSTToolStripMenuItem"
-        Me.GuionesSTToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.GuionesSTToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
         Me.GuionesSTToolStripMenuItem.Text = "Guiones ST"
         '
         'GuionesVentasToolStripMenuItem
         '
         Me.GuionesVentasToolStripMenuItem.Name = "GuionesVentasToolStripMenuItem"
-        Me.GuionesVentasToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.GuionesVentasToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
         Me.GuionesVentasToolStripMenuItem.Text = "Guiones Ventas"
         '
         'TarifasToolStripMenuItem
         '
         Me.TarifasToolStripMenuItem.Name = "TarifasToolStripMenuItem"
-        Me.TarifasToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.TarifasToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
         Me.TarifasToolStripMenuItem.Text = "Tarifas"
         '
         'PYMESToolStripMenuItem
         '
         Me.PYMESToolStripMenuItem.Name = "PYMESToolStripMenuItem"
-        Me.PYMESToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.PYMESToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
         Me.PYMESToolStripMenuItem.Text = "PYMES"
         '
         'ForviToolStripMenuItem1
         '
         Me.ForviToolStripMenuItem1.Name = "ForviToolStripMenuItem1"
-        Me.ForviToolStripMenuItem1.Size = New System.Drawing.Size(179, 22)
+        Me.ForviToolStripMenuItem1.Size = New System.Drawing.Size(198, 22)
         Me.ForviToolStripMenuItem1.Text = "Forvi"
         '
         'WEBMAILToolStripMenuItem
         '
         Me.WEBMAILToolStripMenuItem.Name = "WEBMAILToolStripMenuItem"
-        Me.WEBMAILToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.WEBMAILToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
         Me.WEBMAILToolStripMenuItem.Text = "WEBMAIL"
         '
         'SoporteADSLToolStripMenuItem
         '
         Me.SoporteADSLToolStripMenuItem.Name = "SoporteADSLToolStripMenuItem"
-        Me.SoporteADSLToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.SoporteADSLToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
         Me.SoporteADSLToolStripMenuItem.Text = "Soporte ADSL"
         '
         'SoporteHFCToolStripMenuItem
         '
         Me.SoporteHFCToolStripMenuItem.Name = "SoporteHFCToolStripMenuItem"
-        Me.SoporteHFCToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.SoporteHFCToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
         Me.SoporteHFCToolStripMenuItem.Text = "Soporte HFC"
         '
         'PuntosMenu
         '
         Me.PuntosMenu.Name = "PuntosMenu"
-        Me.PuntosMenu.Size = New System.Drawing.Size(179, 22)
-        Me.PuntosMenu.Text = "Puntos de Contacto"
+        Me.PuntosMenu.Size = New System.Drawing.Size(198, 22)
+        Me.PuntosMenu.Text = ">> Puntos de Contacto"
         '
         'GrillaDeCanalesToolStripMenuItem
         '
         Me.GrillaDeCanalesToolStripMenuItem.Name = "GrillaDeCanalesToolStripMenuItem"
-        Me.GrillaDeCanalesToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.GrillaDeCanalesToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
         Me.GrillaDeCanalesToolStripMenuItem.Text = "Grilla de Canales"
         '
         'BaseDeDatosToolStripMenuItem
         '
         Me.BaseDeDatosToolStripMenuItem.Name = "BaseDeDatosToolStripMenuItem"
-        Me.BaseDeDatosToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.BaseDeDatosToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
         Me.BaseDeDatosToolStripMenuItem.Text = "Base de Datos"
         '
         'EliteToolStripMenuItem2
         '
         Me.EliteToolStripMenuItem2.Name = "EliteToolStripMenuItem2"
-        Me.EliteToolStripMenuItem2.Size = New System.Drawing.Size(179, 22)
+        Me.EliteToolStripMenuItem2.Size = New System.Drawing.Size(198, 22)
         Me.EliteToolStripMenuItem2.Text = "Elite"
         '
         'RegistroDeLlamadasToolStripMenuItem
@@ -1562,7 +1582,7 @@ Partial Class Form1
         Me.TGUIONES.Name = "TGUIONES"
         Me.TGUIONES.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.TGUIONES.Size = New System.Drawing.Size(644, 135)
-        Me.TGUIONES.TabIndex = 165
+        Me.TGUIONES.TabIndex = 2
         Me.TGUIONES.TabStop = False
         '
         'GEstadisticas
@@ -1628,21 +1648,12 @@ Partial Class Form1
         Me.Tayuda.Size = New System.Drawing.Size(233, 289)
         Me.Tayuda.TabIndex = 1
         '
-        'IAna
-        '
-        Me.IAna.Image = CType(resources.GetObject("IAna.Image"), System.Drawing.Image)
-        Me.IAna.Location = New System.Drawing.Point(7, 16)
-        Me.IAna.Name = "IAna"
-        Me.IAna.Size = New System.Drawing.Size(124, 132)
-        Me.IAna.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.IAna.TabIndex = 175
-        Me.IAna.TabStop = False
-        '
         'GroupBox1
         '
         Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.CorreoT)
         Me.GroupBox1.Controls.Add(Me.Tnumero)
         Me.GroupBox1.Controls.Add(Me.IAna)
         Me.GroupBox1.Controls.Add(Me.TGUIONES)
@@ -1661,6 +1672,39 @@ Partial Class Form1
         Me.Tnumero.TabIndex = 20
         Me.Tnumero.Visible = False
         '
+        'IAna
+        '
+        Me.IAna.Image = CType(resources.GetObject("IAna.Image"), System.Drawing.Image)
+        Me.IAna.Location = New System.Drawing.Point(7, 16)
+        Me.IAna.Name = "IAna"
+        Me.IAna.Size = New System.Drawing.Size(124, 132)
+        Me.IAna.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.IAna.TabIndex = 175
+        Me.IAna.TabStop = False
+        '
+        'DG1
+        '
+        Me.DG1.Controls.Add(Me.TxDireccion)
+        Me.DG1.Controls.Add(Me.CCTitularTextBox)
+        Me.DG1.Controls.Add(Me.Button2)
+        Me.DG1.Controls.Add(Me.DptoT)
+        Me.DG1.Controls.Add(Me.AreaTextBox)
+        Me.DG1.Controls.Add(Me.Label1)
+        Me.DG1.Controls.Add(Me.CiudadT)
+        Me.DG1.Controls.Add(Me.TCausa)
+        Me.DG1.Controls.Add(Me.ComboBox1)
+        Me.DG1.Controls.Add(Me.CCvisible)
+        Me.DG1.Controls.Add(CCTitularLabel)
+        Me.DG1.Controls.Add(Me.Label13)
+        Me.DG1.Controls.Add(Me.Button16)
+        Me.DG1.Controls.Add(Me.Button8)
+        Me.DG1.Location = New System.Drawing.Point(0, 86)
+        Me.DG1.Name = "DG1"
+        Me.DG1.Size = New System.Drawing.Size(288, 175)
+        Me.DG1.TabIndex = 2
+        Me.DG1.TabStop = False
+        Me.DG1.Text = "Observaciones: User manifiesta que:"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1668,11 +1712,12 @@ Partial Class Form1
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.LightSteelBlue
         Me.ClientSize = New System.Drawing.Size(1083, 511)
+        Me.Controls.Add(Me.DContacto)
+        Me.Controls.Add(Me.DG1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GAtajoFrm)
         Me.Controls.Add(Me.GEstadisticas)
         Me.Controls.Add(Me.Dubicacion)
-        Me.Controls.Add(Me.DContacto)
         Me.Controls.Add(Me.Button11)
         Me.Controls.Add(Me.TGuion)
         Me.Controls.Add(Me.Button3)
@@ -1717,9 +1762,11 @@ Partial Class Form1
         Me.GEstadisticas.PerformLayout()
         Me.GAtajoFrm.ResumeLayout(False)
         Me.GAtajoFrm.PerformLayout()
-        CType(Me.IAna, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.IAna, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.DG1.ResumeLayout(False)
+        Me.DG1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1883,5 +1930,9 @@ Partial Class Form1
     Friend WithEvents Tnumero As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Button6 As System.Windows.Forms.Button
+    Friend WithEvents RegistrarFallaAplicativoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DG1 As System.Windows.Forms.GroupBox
+    Friend WithEvents CheckBox3 As System.Windows.Forms.CheckBox
 
 End Class

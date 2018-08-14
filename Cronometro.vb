@@ -36,7 +36,7 @@
             Diadema.Show()
         ElseIf e.KeyData = Keys.Control + Keys.L Then
             Me.KeyPreview = False
-            Form1.tNotas()
+            Form1.TNotas()
             Notas.Show()
         ElseIf e.Alt And e.KeyCode = Keys.NumPad1 Then
             Me.KeyPreview = False
@@ -56,7 +56,6 @@
 
     Private Sub Cronometro_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim NLlamada As String = "....."
-        TAlerta.ForeColor = Color.Black
         If (Form1.CNombreTextBox.Text <> "") Then
             NLlamada = Form1.CNombreTextBox.Text
         End If
@@ -80,7 +79,7 @@
 
     End Sub
 
-    Private Sub Cronometro_MouseClick(sender As Object, e As MouseEventArgs) Handles Me.MouseClick, LbMinutos.Click, Label3.Click, LbSegndos.Click, GBLlamada.Click
+    Private Sub Cronometro_MouseClick(sender As Object, e As MouseEventArgs) Handles Me.MouseClick, LbMinutos.Click, Label3.Click, LbSegndos.Click, GBLlamada.Click, Button3.Click
         If (Form1.CmdIniciar.Text = ">>") Then
             Form1.CmdIniciar.Text = "||"
             Form1.LbMinutos.Text = "00"
@@ -106,6 +105,21 @@
             LbMinutos.Text = "00"
             Me.BackColor = Color.White
         End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Form1.TextBox2.Text = "1"
+        Form1.ICronometro()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Form1.TextBox2.Text = "2"
+        Form1.ICronometro()
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Form1.TextBox2.Text = "3"
+        Form1.ICronometro()
     End Sub
 
 End Class

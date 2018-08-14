@@ -96,6 +96,12 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="WebDriver">
+      <HintPath>packages\Selenium.WebDriver.3.13.1\lib\net45\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support">
+      <HintPath>packages\Selenium.Support.3.13.1\lib\net45\WebDriver.Support.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -111,10 +117,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlertaT.Designer.vb">
-      <DependentUpon>AlertaT.vb</DependentUpon>
+    <Compile Include="AlertaCronometro.Designer.vb">
+      <DependentUpon>AlertaCronometro.vb</DependentUpon>
     </Compile>
-    <Compile Include="AlertaT.vb">
+    <Compile Include="AlertaCronometro.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Ayuda_Ventas.Designer.vb">
@@ -142,6 +148,12 @@
     <Compile Include="Diadema.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Fallas.Designer.vb">
+      <DependentUpon>Fallas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fallas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +161,8 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="LoginSiebel.vb" />
+    <Compile Include="OpenChrome.vb" />
     <Compile Include="Registros.Designer.vb">
       <DependentUpon>Registros.vb</DependentUpon>
     </Compile>
@@ -197,9 +211,8 @@
     <Compile Include="VarGlob.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AlertaT.resx">
-      <DependentUpon>AlertaT.vb</DependentUpon>
-      <SubType>Designer</SubType>
+    <EmbeddedResource Include="AlertaCronometro.resx">
+      <DependentUpon>AlertaCronometro.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ayuda_Ventas.resx">
       <DependentUpon>Ayuda_Ventas.vb</DependentUpon>
@@ -212,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Diadema.resx">
       <DependentUpon>Diadema.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fallas.resx">
+      <DependentUpon>Fallas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
@@ -249,6 +265,7 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
@@ -284,6 +301,9 @@
     <None Include="My Project\asistente.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="packages\Selenium.Chrome.WebDriver.2.40\build\Selenium.Chrome.WebDriver.targets" Condition="Exists('packages\Selenium.Chrome.WebDriver.2.40\build\Selenium.Chrome.WebDriver.targets')" />
+  <Import Project="packages\Selenium.WebDriver.IEDriver.3.13.0\build\Selenium.WebDriver.IEDriver.targets" Condition="Exists('packages\Selenium.WebDriver.IEDriver.3.13.0\build\Selenium.WebDriver.IEDriver.targets')" />
+  <Import Project="packages\Selenium.Firefox.WebDriver.0.21.0\build\Selenium.Firefox.WebDriver.targets" Condition="Exists('packages\Selenium.Firefox.WebDriver.0.21.0\build\Selenium.Firefox.WebDriver.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

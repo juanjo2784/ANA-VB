@@ -24,7 +24,9 @@ Partial Class Cronometro
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Cronometro))
         Me.GBLlamada = New System.Windows.Forms.GroupBox()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.IDiadema = New System.Windows.Forms.PictureBox()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.Liz = New System.Windows.Forms.Label()
         Me.Duracion = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -32,7 +34,8 @@ Partial Class Cronometro
         Me.LbMinutos = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.LbSegndos = New System.Windows.Forms.Label()
-        Me.TAlerta = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.GBLlamada.SuspendLayout()
         CType(Me.IDiadema, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -43,17 +46,26 @@ Partial Class Cronometro
         Me.GBLlamada.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GBLlamada.Controls.Add(Me.TAlerta)
         Me.GBLlamada.Controls.Add(Me.IDiadema)
         Me.GBLlamada.Controls.Add(Me.Liz)
         Me.GBLlamada.Controls.Add(Me.Duracion)
         Me.GBLlamada.Controls.Add(Me.PictureBox1)
         Me.GBLlamada.Controls.Add(Me.Toido)
-        Me.GBLlamada.Location = New System.Drawing.Point(102, -2)
+        Me.GBLlamada.Location = New System.Drawing.Point(102, -4)
         Me.GBLlamada.Name = "GBLlamada"
-        Me.GBLlamada.Size = New System.Drawing.Size(236, 49)
+        Me.GBLlamada.Size = New System.Drawing.Size(81, 49)
         Me.GBLlamada.TabIndex = 163
         Me.GBLlamada.TabStop = False
+        '
+        'Button3
+        '
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Location = New System.Drawing.Point(214, 23)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(25, 20)
+        Me.Button3.TabIndex = 170
+        Me.Button3.Text = "R"
+        Me.Button3.UseVisualStyleBackColor = True
         '
         'IDiadema
         '
@@ -63,6 +75,16 @@ Partial Class Cronometro
         Me.IDiadema.Size = New System.Drawing.Size(15, 18)
         Me.IDiadema.TabIndex = 162
         Me.IDiadema.TabStop = False
+        '
+        'Button4
+        '
+        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Location = New System.Drawing.Point(214, 3)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(25, 20)
+        Me.Button4.TabIndex = 169
+        Me.Button4.Text = "3"
+        Me.Button4.UseVisualStyleBackColor = True
         '
         'Liz
         '
@@ -135,23 +157,35 @@ Partial Class Cronometro
         Me.LbSegndos.TabIndex = 165
         Me.LbSegndos.Text = "00"
         '
-        'TAlerta
+        'Button1
         '
-        Me.TAlerta.BackColor = System.Drawing.Color.LightSteelBlue
-        Me.TAlerta.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TAlerta.Enabled = False
-        Me.TAlerta.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TAlerta.Location = New System.Drawing.Point(76, 0)
-        Me.TAlerta.Multiline = True
-        Me.TAlerta.Name = "TAlerta"
-        Me.TAlerta.Size = New System.Drawing.Size(154, 49)
-        Me.TAlerta.TabIndex = 167
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(189, 3)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(25, 20)
+        Me.Button1.TabIndex = 167
+        Me.Button1.Text = "1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(189, 23)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(25, 20)
+        Me.Button2.TabIndex = 168
+        Me.Button2.Text = "2"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'Cronometro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(334, 46)
+        Me.ClientSize = New System.Drawing.Size(242, 46)
+        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.LbSegndos)
         Me.Controls.Add(Me.LbMinutos)
         Me.Controls.Add(Me.Label3)
@@ -184,5 +218,8 @@ Partial Class Cronometro
     Friend WithEvents LbSegndos As System.Windows.Forms.Label
     Friend WithEvents Duracion As System.Windows.Forms.Label
     Friend WithEvents Liz As System.Windows.Forms.Label
-    Friend WithEvents TAlerta As System.Windows.Forms.TextBox
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents Button3 As System.Windows.Forms.Button
 End Class

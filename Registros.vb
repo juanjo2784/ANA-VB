@@ -18,7 +18,12 @@ Public Class Registros
     Private Sub Registros_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         If e.Control And e.KeyCode = Keys.F4 Then
             Me.KeyPreview = False
-            Me.Close()
+            Me.Hide()
+        ElseIf e.Control And e.KeyCode = Keys.C Then
+            e.Handled = True
+            Me.KeyPreview = False
+            MsgBox("Estas realizando una acción no autorizada", MsgBoxStyle.Exclamation, "Violación de Seguridad de Datos")
+            Me.Hide()
         End If
     End Sub
 
@@ -27,6 +32,6 @@ Public Class Registros
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Me.HIDe()
+        Me.Hide()
     End Sub
 End Class

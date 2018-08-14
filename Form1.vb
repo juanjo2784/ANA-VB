@@ -169,7 +169,7 @@ Public Class Form1
         TGUIONES.Text = "Señor(a) " & CNombreTextBox.Text & ",  se presenta una falla a nivel general con el servicio en el servicio reportado, le ofrezco disculpas en nombre de TigoUne. Nuestro personal técnico está trabajando en dar una pronta solución."
     End Sub
 
-    Private Sub LIMPIAR()
+    Public Sub LIMPIAR()
         IdllamadaT.Text = ""
         CNombreTextBox.Text = ""
         CCTitularTextBox.Text = ""
@@ -202,14 +202,12 @@ Public Class Form1
         FijoT.BackColor = White
         TGUIONES.BackColor = LightSteelBlue
         txtProceso.BackColor = LightSteelBlue
-        Cronometro.TAlerta.BackColor = LightSteelBlue
         VarGlob.SAvanzado = ""
         VarGlob.Diagnostico = ""
         VarGlob.codarea = 4
         VarGlob.CodDig = 10
         VarGlob.CDig = 10
         VarGlob.ObGraficas = ""
-        Cronometro.TAlerta.Text = ""
         Me.Text = "Prototype Developed by ASHER - [ Asistente Para Nuevos Agentes - ANA ] >> Diadema en OIDO " & VarGlob.OIDO
         If (VarGlob.OIDO = "DERECHO") Then
             Cronometro.Toido.BackColor = Green
@@ -253,6 +251,10 @@ Public Class Form1
         IAna.BackColor = Transparent
         Tayuda.BackColor = LightSteelBlue
         BtSPC.Enabled = False
+        If (CheckBox2.Checked = False) Then
+            Tayuda.BackColor = White
+            Tayuda.BorderStyle = BorderStyle.FixedSingle
+        End If
     End Sub
 
     Private Sub BT()
@@ -443,7 +445,6 @@ Public Class Form1
                     btActualizarP.BackColor = LightSteelBlue
                     txtProceso.BackColor = LightSteelBlue
                     Cronometro.GBLlamada.BackColor = LightSteelBlue
-                    Cronometro.TAlerta.BackColor = LightSteelBlue
                     If (CheckBox2.Checked = False) Then
                         Tayuda.BackColor = White
                         Tayuda.BorderStyle = BorderStyle.FixedSingle
@@ -464,7 +465,6 @@ Public Class Form1
                     TGUIONES.BackColor = PaleGreen
                     txtProceso.BackColor = PaleGreen
                     Cronometro.GBLlamada.BackColor = PaleGreen
-                    Cronometro.TAlerta.BackColor = PaleGreen
                 Case Is <= 640
                     Me.BackColor = LightBlue
                     btActualizarP.BackColor = LightBlue
@@ -478,7 +478,6 @@ Public Class Form1
                     TGUIONES.BackColor = LightBlue
                     txtProceso.BackColor = LightBlue
                     Cronometro.GBLlamada.BackColor = LightBlue
-                    Cronometro.TAlerta.BackColor = LightBlue
                 Case Is > 640
                     Me.BackColor = Silver
                     btActualizarP.BackColor = Silver
@@ -492,7 +491,6 @@ Public Class Form1
                     TGUIONES.BackColor = Silver
                     txtProceso.BackColor = Silver
                     Cronometro.GBLlamada.BackColor = Silver
-                    Cronometro.TAlerta.BackColor = Silver
             End Select
         End If
 
@@ -564,8 +562,8 @@ Public Class Form1
                     Case Is > 1
                         MP = " de " & Alerta & " a " & TimerA(TextBox2.Text) & " minutos"
                 End Select
-                Beep()
-                AlertaT.Show()
+                AlertaCronometro.Show()
+                AlertaCronometro.BringToFront()
             End If
             Select Case CInt(LbMinutos.Text)
                 Case Is < (TimerA(TextBox2.Text) - 1)
@@ -600,7 +598,7 @@ Public Class Form1
                 Cronometro.Liz.Text = "<<"
                 Cronometro.Toido.Text = ""
                 TGUIONES.Text = "!!! Debes cambiar la diadema a tu oido Izquierdo !!!  Tu Salud es importante ..." & vbNewLine & vbNewLine & TGUIONES.Text
-                Cronometro.TAlerta.Text = "¡¡Cambia: Diadema a oido Izquierdo !!"
+                CreateObject("WScript.Shell").Popup("¡¡Cambia: Diadema a oido Izquierdo !!", 1, "ANA - Cuida tus oidos", 0 + 64)
             Else
                 VarGlob.OIDO = "DERECHO"
                 Cronometro.Toido.BackColor = Green
@@ -608,10 +606,8 @@ Public Class Form1
                 Cronometro.Toido.Text = ">>"
                 Cronometro.Liz.Text = ""
                 TGUIONES.Text = "!!! Debes cambiar la diadema a tu oido Derecho !!!  Tu Salud es importante ..." & vbNewLine & vbNewLine & TGUIONES.Text
-                Cronometro.TAlerta.Text = "¡¡Cambia: Diadema a oido Derecho !!"
+                CreateObject("WScript.Shell").Popup("¡¡Cambia: Diadema a oido Derecho !!", 1, "ANA - Cuida tus oidos", 0 + 64)
             End If
-            BT()
-            Beep()
         End If
     End Sub
 
@@ -820,8 +816,8 @@ Public Class Form1
 
     Private Sub BtTransferencia_Click(sender As Object, e As EventArgs)
         VPlantillaC()
-        If (Tcausa.text <> "") Then
-            txtProceso.Text = CNombreTextBox.Text & " CC: " & CCContactoT.Text & " || " & Tcausa.text & " - " & TxDireccion.Text
+        If (TCausa.Text <> "") Then
+            txtProceso.Text = CNombreTextBox.Text & " CC: " & CCContactoT.Text & " || " & TCausa.Text & " - " & TxDireccion.Text
         End If
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -974,8 +970,8 @@ Public Class Form1
 
                 Case "TRASFERENCIA"
 
-                    If (Tcausa.text <> "SinMotivo") Then
-                        txtProceso.Text = CNombreTextBox.Text & VID(CCvisible.Text, ComboBox1.Text) & " - " & TxDireccion.Text & " || " & Tcausa.text
+                    If (TCausa.Text <> "SinMotivo") Then
+                        txtProceso.Text = CNombreTextBox.Text & VID(CCvisible.Text, ComboBox1.Text) & " - " & TxDireccion.Text & " || " & TCausa.Text
                         GVariables.TRASFERENCIA = GVariables.TRASFERENCIA + 1
                         AgregarRegistro()
                     Else
@@ -1004,7 +1000,7 @@ Public Class Form1
             Button11.Enabled = True
             If (Tinteracion.Text = "CROSS" Or Tinteracion.Text = "UPS") Then
                 BtSPC.Text = "Detener Timer"
-                Tcausa.text = "Venta"
+                TCausa.Text = "Venta"
             Else
                 BtSPC.Text = "Plantilla Avaya"
             End If
@@ -1312,26 +1308,7 @@ Public Class Form1
         e.KeyChar = Char.ToLower(e.KeyChar)
     End Sub
 
-    Private Sub ComboBox2_LostFocus(sender As Object, e As EventArgs) Handles ComboBox2.LostFocus
-        If (ComboBox2.Text.Length >5) Then
-            Dim dcorreo As String = ComboBox2.Text
-            Dim vcorreo As String = dcorreo.Substring(0, 1)
 
-            If (vcorreo <> "@") Then
-                ComboBox2.Text = "@" & dcorreo
-            End If
-        Else
-            MsgBox("Debes determinar el dominio, el @, se agrega automaticamente, no necesitas escribirlo")
-            ComboBox2.Text = "@sincorreo.com"
-            TextBox1.Focus()
-        End If
-
-        If (ComboBox2.Text <> "@sincorreo.com") Then
-            ComboBox2.BackColor = White
-        Else
-            ComboBox2.BackColor = GreenYellow
-        End If
-    End Sub
 
     Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
         CorreoT.Text = TextBox1.Text & ComboBox2.Text
@@ -1358,11 +1335,38 @@ Public Class Form1
             'dividir correo
             VarGlob.Partir = TextBox1.Text
             Dim Parroba As Integer = VarGlob.Partir.IndexOf("@", 0)
+            Dim mail As String = TextBox1.Text
             If (Parroba > 0) Then
                 TextBox1.Text = VarGlob.Partir.Substring(0, Parroba)
-                TGUIONES.Text = "Recuerda el Dominio comienza @" & VarGlob.Partir.Substring(Parroba + 1, 4) & "..." & vbNewLine & vbNewLine & TGUIONES.Text
+                ComboBox2.Text = Dominio(mail)
+                IdServicioT.Focus()
             End If
 
+        End If
+    End Sub
+    Public Function Dominio(ByVal mail As String) As String
+        Dim p1 As Integer = mail.IndexOf("@", 0)
+        Dim rdominio As String = mail.Substring(p1, mail.Length - p1)
+        Return rdominio
+    End Function
+    Private Sub ComboBox2_LostFocus(sender As Object, e As EventArgs) Handles ComboBox2.LostFocus
+        If (ComboBox2.Text.Length > 5) Then
+            Dim dcorreo As String = ComboBox2.Text
+            Dim vcorreo As String = dcorreo.Substring(0, 1)
+
+            If (vcorreo <> "@") Then
+                ComboBox2.Text = "@" & dcorreo
+            End If
+        Else
+            MsgBox("Debes determinar el dominio, el @, se agrega automaticamente, no necesitas escribirlo")
+            ComboBox2.Text = "@sincorreo.com"
+            TextBox1.Focus()
+        End If
+
+        If (ComboBox2.Text <> "@sincorreo.com") Then
+            ComboBox2.BackColor = White
+        Else
+            ComboBox2.BackColor = GreenYellow
         End If
     End Sub
 
@@ -1403,37 +1407,37 @@ Public Class Form1
     End Sub
 
     Private Sub SMNETToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SMNETToolStripMenuItem.Click
-        System.Diagnostics.Process.Start("chrome.exe", "http://smnet.une.net.co:8080/smnet/")
+        OpenPage("http://smnet.une.net.co:8080/smnet/", "j_username", "j_password", VarGlob.PWTS, "nextbutton")
     End Sub
     Private Sub SiebelToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles SiebelToolStripMenuItem1.Click
         System.Diagnostics.Process.Start("iexplore.exe", "http://unecrm/ecommunications_esn/")
     End Sub
 
     Private Sub CorreoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles CorreoToolStripMenuItem1.Click
-        System.Diagnostics.Process.Start("chrome.exe", "https://correo.emtelco.com.co")
+        OpenPage2("https://correo.emtelco.com.co", "username", "password", VarGlob.PRED)
     End Sub
 
     Private Sub ContingenciaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ContingenciaToolStripMenuItem.Click
-        System.Diagnostics.Process.Start("chrome.exe", "https://10.1.1.11/")
+        OpenPage2("https://10.1.1.11/", "username", "password", VarGlob.PRED)
     End Sub
     Private Sub WFOToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WFOToolStripMenuItem.Click
-        System.Diagnostics.Process.Start("iexplore.exe", "http://emt-wfowfm01:7001/wfo/control/dashboard_view")
+        OpenIE("http://emt-wfowfm01:7001/wfo/control/dashboard_view", "username", "password", VarGlob.PRED, "loginToolbar")
     End Sub
     Private Sub GDIToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GDIToolStripMenuItem.Click
         System.Diagnostics.Process.Start("chrome.exe", "http://10.5.105.27:8080/gdi/gdi.php")
     End Sub
     Private Sub MaestroDeContenidosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MaestroDeContenidosToolStripMenuItem.Click
-        System.Diagnostics.Process.Start("chrome.exe", "http://puntosdecontacto.une.com.co/forms/Hogares/MaestroContenidos/login.php")
+        OpenPage("http://puntosdecontacto.une.com.co/forms/Hogares/MaestroContenidos/login.php", "username", "password", VarGlob.PCC, "btnsubmit​")
     End Sub
     Private Sub VisitasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VisitasToolStripMenuItem.Click
         System.Diagnostics.Process.Start("chrome.exe", "http://10.65.73.86/VisitasTerreno/Consultalist.php?")
     End Sub
     Private Sub ChatToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ChatToolStripMenuItem.Click
-        System.Diagnostics.Process.Start("chrome.exe", "http://10.5.105.27:8080/Agendamiento_gace2E/login.php")
+        OpenPage("http://10.5.105.27:8080/Agendamiento_gace2E/login.php", "user_name", "password", VarGlob.PCC, "submit")
     End Sub
 
     Private Sub TR69ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TR69ToolStripMenuItem.Click
-        System.Diagnostics.Process.Start("chrome.exe", "https://10.158.108.218/live/AXSupportPortal/portal/")
+        OpenPage("https://10.158.108.218/live/AXSupportPortal/portal/", "username", "password", VarGlob.PWTS, "login")
     End Sub
 
     Private Sub ConfrontaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConfrontaToolStripMenuItem.Click
@@ -1445,11 +1449,11 @@ Public Class Form1
     End Sub
 
     Private Sub GuionesSTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GuionesSTToolStripMenuItem.Click
-        System.Diagnostics.Process.Start("chrome.exe", "http://puntosdecontacto/index.php/nuac-on?id=406 ")
+        OpenPage("http://puntosdecontacto/index.php/nuac-on", "username", "password", VarGlob.PRED, "btn-login")
     End Sub
 
     Private Sub ContratoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ContratoToolStripMenuItem.Click
-        System.Diagnostics.Process.Start("chrome.exe", "http://10.65.73.86/CambiosPortafolio/")
+        OpenPage("http://172.20.2.159/idc/login.php", "usuario", "password", VarGlob.PCC, "btn-login")
     End Sub
 
     Private Sub TarifasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TarifasToolStripMenuItem.Click
@@ -1477,7 +1481,7 @@ Public Class Form1
     End Sub
 
     Private Sub RadarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RadarToolStripMenuItem.Click
-        System.Diagnostics.Process.Start("chrome.exe", "https://radarplus.computec.com.co/acceso/UI/Login")
+        OpenPage("http://172.20.2.178/cmi_pymes/web/defingresos", "usuario", "password", Environment.UserName, "button_login")
     End Sub
     Private Sub PYMESToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PYMESToolStripMenuItem.Click
         System.Diagnostics.Process.Start("chrome.exe", "http://puntosdecontacto/index.php/nuac-on?id=405")
@@ -1487,10 +1491,10 @@ Public Class Form1
         System.Diagnostics.Process.Start("http://sigweb/cartografiacol/")
     End Sub
     Private Sub SiebelToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles SiebelToolStripMenuItem.Click
-        System.Diagnostics.Process.Start("iexplore.exe", "http://unecrm/ecommunications_esn/")
+        OpenIE("http://unecrm/ecommunications_esn/", "SWEUserName", "SWEPassword", VarGlob.PSIEBEL, "s_swepi_22")
     End Sub
     Private Sub Siebel2ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Siebel2ToolStripMenuItem.Click
-        System.Diagnostics.Process.Start("iexplore.exe", "http://unecrm2/ecommunications_esn/")
+        OpenIE("http://unecrm2/ecommunications_esn/", "SWEUserName", "SWEPassword", VarGlob.PSIEBEL, "s_swepi_22")
     End Sub
     Private Sub GuionesVentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GuionesVentasToolStripMenuItem.Click
         System.Diagnostics.Process.Start("chrome.exe", "http://puntosdecontacto.une.com.co/forms/Hogares/MaestroContenidos/login.php")
@@ -1504,7 +1508,7 @@ Public Class Form1
     End Sub
 
     Private Sub MaestroDeContenidosToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles PuntosMenu.Click
-        System.Diagnostics.Process.Start("chrome.exe", "http://puntosdecontacto/")
+        OpenPage("http://puntosdecontacto/index.php/component/users/?view=login", "username", "password", VarGlob.PWTS, "button-login")
     End Sub
 
     Private Sub WEBMAILToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WEBMAILToolStripMenuItem.Click
@@ -1544,9 +1548,9 @@ Public Class Form1
             Select Case Tinteracion.Text
                 Case "SPC", "ASESORIA"
                     If (Tinteracion.Text = "ASESORIA") Then
-                        Label1.Text = "Observaciones: User solicita "
+                        DG1.Text = "Observaciones: User solicita "
                     Else
-                        Label1.Text = "Observaciones: User manifiesta que:"
+                        DG1.Text = "Observaciones: User manifiesta que:"
                     End If
                     VPlantillaC()
                     If (VarGlob.Plantilla <> Nothing) Then
@@ -1557,7 +1561,7 @@ Public Class Form1
                     Gok()
                     VContacto(MovilT.Text, FijoT.Text)
                 Case "TERRENO"
-                    Label1.text = "Observaciones: User manifiesta que:"
+                    DG1.Text = "Observaciones: User manifiesta que:"
                     VPlantillaC()
                     If (VarGlob.Plantilla <> Nothing) Then
                         txtProceso.Text = VarGlob.Plantilla
@@ -1617,6 +1621,9 @@ Public Class Form1
                     End If
             End Select
         End If
+        If (CheckBox3.Checked = False) Then
+            txtProceso.Text = txtProceso.Text & " >> Falla en Aplicativos " & VarGlob.TEspecial
+        End If
     End Sub
     Private Sub Gok()
         TGUIONES.ForeColor = Black
@@ -1627,7 +1634,7 @@ Public Class Form1
     End Sub
     Private Sub ServiciosSupMenu_Click(sender As Object, e As EventArgs) Handles ServiciosSupMenu.Click
         Tinteracion.Text = "OTROS"
-        Tcausa.text = " Servicios Suspendidos"
+        TCausa.Text = " Servicios Suspendidos"
         Tinteracion.Text = "TRASFERENCIA"
     End Sub
 
@@ -1637,7 +1644,7 @@ Public Class Form1
             Dir = TxDireccion.Text & " - " & CiudadT.Text
         End If
         Tinteracion.Text = "OTROS"
-        Tcausa.text = " Tramite Pendiente"
+        TCausa.Text = " Tramite Pendiente"
         Tinteracion.Text = "TRASFERENCIA"
     End Sub
 
@@ -1700,7 +1707,7 @@ Public Class Form1
     Private Sub EliteToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EliteToolStripMenuItem1.Click
         VPlantillaC()
         If (AreaTextBox.Text = "ELITE") Then
-            If (Tcausa.text <> Nothing) Then
+            If (TCausa.Text <> Nothing) Then
                 txtProceso.Text = "Id-LLamada: " & IdllamadaT.Text & " - " & CiudadT.Text & " || " & TCausa.Text
                 TSElite()
 
@@ -1877,28 +1884,23 @@ Public Class Form1
         If (MovilT.Text <> "3338888888" And FijoT.Text = "8888888") Then
             Tcontaco = "Cel: " & MovilT.Text
             TGUIONES.Text = "!! No has Actualizado numero fijo !!" & vbNewLine & vbNewLine & TGUIONES.Text
-            Cronometro.TAlerta.Text = "!! No has Actualizado numero fijo !!"
             FijoT.BackColor = GreenYellow
         ElseIf (MovilT.Text = "3338888888" And FijoT.Text <> "8888888") Then
             Tcontaco = "Fijo: " & FijoT.Text
             TGUIONES.Text = "!! No has Actualizado numero Movil !!" & vbNewLine & vbNewLine & TGUIONES.Text
             MovilT.BackColor = GreenYellow
-            Cronometro.TAlerta.Text = Cronometro.TAlerta.Text & " !! No has Actualizado numero Movil !!"
         ElseIf (MovilT.Text = "3338888888" And FijoT.Text = "8888888") Then
             Tcontaco = ""
             TGUIONES.Text = "!! No has Actualizado los numeros de contacto !!" & vbNewLine & vbNewLine & TGUIONES.Text
-            Cronometro.TAlerta.Text = "!! No has Actualizado los contactos !!"
             MovilT.BackColor = GreenYellow
             FijoT.BackColor = GreenYellow
         ElseIf (MovilT.Text <> "3338888888" And FijoT.Text <> "8888888") Then
             Tcontaco = "Cel: " & MovilT.Text & "  Fijo: " & FijoT.Text
             TGUIONES.Text = "!!Excelente, los contactos estaban actualizado !!" & vbNewLine & vbNewLine & TGUIONES.Text
-            Cronometro.TAlerta.Text = " !! Contactos actualizados !!"
         End If
         If (TextBox1.Text = "cliente") Then
             TGUIONES.Text = "¡¡ Recuerda Validar el correo !!" & vbNewLine & vbNewLine & TGUIONES.Text
             TextBox1.BackColor = GreenYellow
-            Cronometro.TAlerta.Text = Cronometro.TAlerta.Text & " -- ¡¡ Recuerda Validar el correo !!"
             ComboBox2.BackColor = GreenYellow
         End If
         Return Tcontaco
@@ -2181,7 +2183,6 @@ Public Class Form1
 
     Private Sub InformacionGeneralToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InformacionGeneralToolStripMenuItem.Click
         IGENERAL.Show()
-        IGENERAL.CausaTextBox.Focus()
     End Sub
 
     Public Sub TNotas()
@@ -2292,10 +2293,27 @@ Public Class Form1
         End If
     End Sub
 
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        If (Not String.IsNullOrEmpty(CSerial.Text)) Then
+            CSerial.SelectionStart = 0
+            CSerial.SelectionLength = CSerial.Text.Length
+            CSerial.Copy()
+        End If
+    End Sub
 
-    Private Sub IdllamadaT_TextChanged(sender As Object, e As EventArgs) Handles IdllamadaT.TextChanged
+    Private Sub RegistrarFallaAplicativoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistrarFallaAplicativoToolStripMenuItem.Click
+        Fallas.Show()
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs)
+        CreateObject("WScript.Shell").Popup("¡¡Cambia: Diadema a oido Izquierdo !!", 1, "ANA - Cuida tus oidos", 0 + 64)
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
 
     End Sub
 
+    Private Sub TGUIONES_TextChanged(sender As Object, e As EventArgs) Handles TGUIONES.TextChanged
 
+    End Sub
 End Class
